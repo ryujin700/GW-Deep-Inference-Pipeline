@@ -9,8 +9,16 @@ A high-performance PyTorch implementation benchmarking **1D-CNNs (George & Huert
 * **Strain Simulation & Conditioning:** 1.0-second time-series sampled at $f_s = 8192\text{ Hz}$. Injects post-Newtonian inspiral-merger chirps across primary masses $m_1, m_2 \in [10, 50]\,M_\odot$ into colored Gaussian noise shaped by analytic **LIGO Power Spectral Density (PSD)**.
 * **Whitening & Bandpass Filtering:** Frequency-domain noise whitening using zero-phase $6^{\text{th}}$-order Butterworth bandpass filtering ($20\text{ Hz} - 800\text{ Hz}$).
 * **Joint Multi-Task Objective:** Unified classification (BCE loss) and parameter regression (MSE loss) with dynamic learning rate warmup scheduling:
-  $$\mathcal{L} = \mathcal{L}_{\text{BCE}}(P_{\text{sig}}, y_{\text{cls}}) + \lambda_{\text{reg}}(t) \cdot \mathcal{L}_{\text{MSE}}(\hat{m}_1, \hat{m}_2; m_1, m_2)$$
 
+  $$
+  \mathcal{L}
+  =
+  \mathcal{L}_{\mathrm{BCE}}\left(P(y_{\mathrm{cls}} \mid x)\right)
+  +
+  \lambda_{\mathrm{reg}}(t)
+  \cdot
+  \mathcal{L}_{\mathrm{MSE}}\left(\hat{m}_1,\hat{m}_2,m_1,m_2\right)
+  $$
 ---
 
 ## Model Architectures
