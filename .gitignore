@@ -1,0 +1,14 @@
+# Python & Jupyter
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+*.egg-info/
+.venv/
+env/
+
+# Model Checkpoints & Data Caches
+*.pth
+*.pt
+*.h5
+*.npy
+best_*.pth
