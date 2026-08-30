@@ -12,14 +12,7 @@ A high-performance PyTorch implementation benchmarking **1D-CNNs (George & Huert
 
 * **Joint Multi-Task Objective:** Unified classification (BCE loss) and parameter regression (MSE loss) with dynamic learning rate warmup scheduling:
 
-  $`\mathcal{L}
-  =
-  \mathcal{L}_{\mathrm{BCE}}\left(P(y_{\mathrm{cls}} \mid x)\right)
-  +
-  \lambda_{\mathrm{reg}}(t)\cdot
-  \mathcal{L}_{\mathrm{MSE}}\left(\hat{m}_1,\hat{m}_2,m_1,m_2\right)`$
-
----
+ $$Loss = BCE(P_{sig}, y_{cls}) + \lambda(t) \cdot MSE(\hat{m}_1, \hat{m}_2; m_1, m_2)$$
 
 ## Model Architectures
 
